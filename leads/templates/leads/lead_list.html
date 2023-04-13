@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   
+    <h>This is all our Leads</h>
+    {% for lead in leads %}
+        <div class="lead">
+            <a href="{% url 'detail' lead.id %}"> {{ lead.first_name }} {{ lead.last_name}}</a>  Age: {{ lead.age }}
+        </div>
+    {% endfor %}
+    <br>
+    <a href="{% url 'create' %}" style="background-color: aqua">Create New Lead</a>
+    
+{% endblock %}

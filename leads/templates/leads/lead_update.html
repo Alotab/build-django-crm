@@ -1,0 +1,13 @@
+
+{% extends 'base.html' %}
+    <a href="{% url 'home' %}">Go back to Home Page</a>
+   <hr />
+    <h1>Update Lead: {{ lead.first_name }} {{ lead.last_name }}</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <br/>
+	  <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <a href="{% url 'home' %}">Go back to Home Page</a>
+   <hr />
+    <h1>Create a new lead</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <br/>
+	  <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+    
+{% endblock %}
